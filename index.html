@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IoT-Based Smart Fish Farming</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">🐟</span>
+    <div><h1>IoT-Based Smart Fish Farming</h1>
+    <p>Water Quality Monitoring &nbsp;|&nbsp; Predictive Analysis &nbsp;|&nbsp; Healthy Fish &nbsp;|&nbsp; Sustainable Future</p></div></div>
+  <div class="status"><span class="dot"></span>System Online <span id="clock" class="clock"></span><span class="avatar">👤</span></div>
+</header>
+
+<div class="layout">
+<nav class="side">
+  <a href="#dash" class="active">🏠 Dashboard</a>
+  <a href="#live">📡 Live Monitoring</a>
+  <a href="#history">📈 History &amp; Charts</a>
+  <a href="#predict">🧠 Predictions</a>
+  <a href="#alerts">🔔 Alerts</a>
+  <a href="#settings">⚙️ Settings</a>
+  <div class="tag"><div class="big">🐟</div>Smart Farming<br>for a Healthier<br>Tomorrow</div>
+</nav>
+
+<main id="dash">
+  <section class="hero">
+    <div><small>Welcome to</small><h2>Smart Fish Farming Dashboard</h2>
+    <p>Real-time water quality monitoring and AI-powered insights for better fish health and higher productivity.</p></div>
+    <div class="pond"><i></i><i></i><i></i></div>
+  </section>
+
+  <section class="cards">
+    <div class="m blue"><span class="ic">💧</span><div><b>Water Temperature</b><h3><span id="c-temp">26.8</span> <small>°C</small></h3><em class="ok">Normal</em></div><span class="tr">↗</span></div>
+    <div class="m teal"><span class="ic">💧</span><div><b>pH Level</b><h3><span id="c-ph">7.2</span></h3><em class="ok">Normal</em></div><span class="tr">↗</span></div>
+    <div class="m purple"><span class="ic">✦</span><div><b>Dissolved Oxygen (DO)</b><h3><span id="c-do">6.8</span> <small>mg/L</small></h3><em class="ok">Normal</em></div><span class="tr">↗</span></div>
+    <div class="m orange"><span class="ic">💧</span><div><b>Turbidity</b><h3><span id="c-tu">4.2</span> <small>NTU</small></h3><em class="ok">Normal</em></div><span class="tr">↗</span></div>
+  </section>
+
+  <section class="panel trends" id="history">
+    <div class="ph"><h4>Water Quality Trends (Last 24 Hours)</h4>
+    <div class="lg"><span style="--c:#2f8cff">Temperature (°C)</span><span style="--c:#14c8a8">pH</span><span style="--c:#a45cf0">DO (mg/L)</span></div></div>
+    <canvas id="trend"></canvas>
+  </section>
+
+  <aside class="panel alerts" id="alerts">
+    <div class="ph"><h4>🔔 Recent Alerts</h4><a href="#" id="viewall">View All</a></div>
+    <ul id="alertlist"></ul>
+  </aside>
+
+  <section class="panel live" id="live">
+    <div class="ph"><h4>〰 Live Sensor Readings</h4></div>
+    <ul class="sens" id="sensors"></ul>
+  </section>
+
+  <section class="panel health" id="predict">
+    <div class="ph"><h4>🧠 Fish Health Prediction</h4></div>
+    <div class="hrow">
+      <div class="ring" id="ring"><div><b id="score">92%</b><span>Healthy</span></div></div>
+      <div class="ai"><small>AI Analysis</small><p id="aitext">No risk detected. Water quality is good for fish growth.</p></div>
+    </div>
+    <small class="pr">Predicted Risk (Next 24h)</small>
+    <div class="risks"><div>🛡<small>Disease</small><b class="g">Low</b></div><div>🐠<small>Mortality</small><b class="g">Low</b></div><div>📊<small>Growth Rate</small><b class="g">Good</b></div></div>
+  </section>
+
+  <section class="panel feed" id="settings">
+    <div class="ph"><h4>📅 Feeding Schedule</h4></div>
+    <div class="time" id="ftime">05:00 AM</div>
+    <small>Next Feeding Time</small>
+    <div><span class="chip" id="countdown">In 6h 36m</span></div>
+    <dl><div><dt>Feed Type</dt><dd>Pellet Feed</dd></div><div><dt>Quantity</dt><dd id="qty">2.5 kg</dd></div><div><dt>Frequency</dt><dd id="freq">2 times/day</dd></div></dl>
+    <button class="btn wide" id="upd">⚙ Update Schedule</button>
+  </section>
+
+  <section class="panel hist">
+    <div class="ph"><h4>📊 Historical Data</h4><select id="range"><option value="7">Last 7 Days</option><option value="14">Last 14 Days</option></select></div>
+    <div class="hwrap"><canvas id="hist"></canvas>
+    <div class="lg col"><span style="--c:#2f8cff">Temperature (°C)</span><span style="--c:#14c8a8">pH</span><span style="--c:#a45cf0">DO (mg/L)</span><span style="--c:#ff9f1a">Turbidity (NTU)</span></div></div>
+  </section>
+
+  <section class="panel quick">
+    <div class="ph"><h4>⚡ Quick Actions</h4></div>
+    <div class="btns"><button class="btn" id="feedbtn">🎥 View Live Feed</button><button class="btn" id="dl">⬇ Download Report</button><button class="btn" id="aer">❄ Adjust Aeration: <span id="aerst">Auto</span></button><button class="btn" id="setbtn">⚙ Update Settings</button></div>
+  </section>
+</main>
+</div>
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
